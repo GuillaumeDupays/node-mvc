@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 /*const connection = mongoose.connection;*/
 
 const articleRoutes = require('./routes/article');
+const auteurRoutes= require('./routes/auteur');
 
 mongoose.connect('mongodb://localhost:27017/db-blob',
     {
@@ -25,5 +26,6 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 
 app.use('/api/articles', articleRoutes);
+app.use('/api/auteurs', auteurRoutes);
 
 module.exports = app;

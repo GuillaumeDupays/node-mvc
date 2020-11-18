@@ -10,7 +10,7 @@ exports.creerArticle = (req, res, next) => {
 };
 
 exports.modifierArticler = (req, res, next) => {
-    Article.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id }, { auteur: req.auteur._id})
+    Article.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id }, { auteur: req.auteur})
         .then(() => res.status(200).json({ message: 'Article modifié'}))
         .catch(error => res.status(400).json({ error }));
 };
